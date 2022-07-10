@@ -6,6 +6,7 @@ url = """https://api.live.bilibili.com/xlive/web-interface/v1/second/getList?pla
 respondObjectList = []
 for i in range(1, 50):
     for j in dict(json.loads(requests.get(url.format(i)).content.decode()))['data']['list']:
+        # 筛选关键词在这
         if '斗' in j['title']:
             respondObjectList.append(j['roomid'])
     asyncio.sleep(1)

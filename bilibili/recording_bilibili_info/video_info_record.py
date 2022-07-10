@@ -2,9 +2,9 @@ import requests
 import json
 import datetime
 import deposit_to_mysql
-
+# 填放bvid
 bvIdList = ['BV17u411v7jn']
-
+# 获取视频的源信息如点赞数、浏览数、硬币数等等
 for i in bvIdList:
     url = "https://api.bilibili.com/x/web-interface/view?bvid=" + str(i)
     data = json.loads(requests.get(url).content.decode())['data']
